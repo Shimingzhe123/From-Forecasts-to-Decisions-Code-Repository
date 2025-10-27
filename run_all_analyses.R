@@ -6,7 +6,13 @@
 # =============================================================================
 
 # Set working directory to script location
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable()) {
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+} else {
+  # If not in RStudio, assume script is run from project root
+  cat("Note: Not running in RStudio. Assuming working directory is project root.\n")
+  cat("Current working directory:", getwd(), "\n")
+}
 
 cat("=============================================================================\n")
 cat("FROM FORECASTS TO DECISIONS: ED STAFFING ANALYSIS\n")
@@ -21,7 +27,14 @@ start_time <- Sys.time()
 # =============================================================================
 
 cat("\n--- Step 0: Checking Required Packages ---\n")
-source("install_packages.R")
+
+if (file.exists("install_packages.R")) {
+  source("install_packages.R")
+} else {
+  cat("Warning: install_packages.R not found.\n")
+  cat("Please ensure all required packages are installed.\n")
+  cat("See README.md for the list of required packages.\n")
+}
 
 # =============================================================================
 # Step 1: Data Preparation

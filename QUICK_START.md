@@ -144,9 +144,16 @@ In `scripts/06_visualization.R`, customize:
 ### Running Individual Sections
 
 Each script is organized into numbered sections. You can run individual sections by:
-1. Opening the script in RStudio
-2. Highlighting the section you want to run
-3. Pressing Ctrl+Enter (Windows/Linux) or Cmd+Enter (Mac)
+1. **Ensure you're in the project root directory**: Either open the .Rproj file in RStudio or set the working directory with `setwd("path/to/project")`
+2. Opening the script in RStudio
+3. Highlighting the section you want to run
+4. Pressing Ctrl+Enter (Windows/Linux) or Cmd+Enter (Mac)
+
+**Important**: When running individual scripts outside of RStudio, make sure your working directory is set to the project root before sourcing the script:
+```r
+setwd("/path/to/From-Forecasts-to-Decisions-Code-Repository")
+source("scripts/01_data_preparation.R")
+```
 
 ### Need Help?
 

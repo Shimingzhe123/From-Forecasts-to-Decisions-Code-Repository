@@ -12,8 +12,13 @@ library(ggplot2)
 library(gridExtra)
 
 # Set working directory to project root
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-setwd("..")
+if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable()) {
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+  setwd("..")
+} else {
+  # If not in RStudio, assume we're already in project root
+  cat("Note: Not running in RStudio. Ensure working directory is set to project root.\n")
+}
 
 # Create output directories
 if (!dir.exists("figures")) dir.create("figures", recursive = TRUE)

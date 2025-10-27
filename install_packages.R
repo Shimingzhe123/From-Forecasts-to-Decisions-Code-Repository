@@ -42,10 +42,7 @@ required_packages <- c(
   
   # Reporting and tables
   "knitr",
-  "kableExtra",
-  
-  # Additional utilities
-  "rstudioapi"
+  "kableExtra"
 )
 
 cat("=============================================================================\n")
