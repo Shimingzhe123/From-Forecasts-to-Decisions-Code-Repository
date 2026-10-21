@@ -2,27 +2,6 @@
 # Reproducibility script for:
 # The Operational Value of Forecasting: Bridging Statistical Accuracy and
 # Decision Utility in Healthcare Operations
-#
-# Purpose
-#   End-to-end reproduction pipeline for the point-forecast + deterministic
-#   staffing optimisation manuscript:
-#     1. Load and aggregate ED arrivals to 15-minute intervals
-#     2. Build rolling-origin one-day-ahead forecasts over 365 days
-#     3. Keep LSTM as an external/precomputed RDS input, as requested
-#     4. Convert forecasts to nurse requirements using 3.5h rolling window
-#     5. Solve deterministic set-covering staffing models with lpSolve
-#     6. Compute perfect-information benchmark, daily staffing imbalance,
-#        overstaffing/understaffing days, accuracy tables and correlation tables
-#     7. Export manuscript-ready data tables and plots
-#
-# IMPORTANT manuscript alignment note
-#   This code defines ME as forecast - actual, consistent with the original
-#   analysis scripts and with the sign of daily staffing imbalance:
-#       DSI = forecast-based staffing - perfect-information staffing
-#   Therefore positive ME means over-forecasting and usually positive DSI means
-#   over-staffing. If the manuscript currently defines ME as actual - forecast,
-#   revise the manuscript formula to match this code, or change ME_DIRECTION
-#   below and regenerate all correlation results.
 # ==============================================================================
 
 # -----------------------------
