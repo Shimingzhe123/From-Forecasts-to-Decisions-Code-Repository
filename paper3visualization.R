@@ -1,11 +1,3 @@
-# ==============================================================================
-# FULL VISUALIZATION SCRIPT FOR JOM MANUSCRIPT (UPDATED)
-# Clean version: EV vs RP only
-# - Remove all "EV + Safety Buffer" content
-# - Keep EV, RP, VSS, EVPI
-# - EEV is treated as a benchmark, not as a plotted policy
-# - Added diag_summary.csv integration for CRPS and other diagnostics
-# ==============================================================================
 
 suppressPackageStartupMessages({
   library(ggplot2)
