@@ -1,6 +1,5 @@
 # ============================================================
-# SCRIPT 2: Optimization Sensitivity Analysis (Unit-Consistent Version)
-# FIXED: Added missing 'verbose' argument parameter
+# SCRIPT 2: Optimization Sensitivity Analysis 
 # ============================================================
 
 suppressPackageStartupMessages({
