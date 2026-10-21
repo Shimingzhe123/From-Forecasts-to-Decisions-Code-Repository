@@ -1,5 +1,4 @@
 # ============================================================================
-# Reproducible R workflow for the JOM manuscript
 # Title: From Forecast to Decision: The Value of Uncertainty in Healthcare Staffing Operations
 
 # ============================================================================
