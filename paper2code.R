@@ -4,36 +4,6 @@
 # Manuscript:
 #   The Operational Value of Forecasting: Bridging Statistical Accuracy and
 #   Decision Utility in Healthcare Operations
-#
-# What this script does:
-#   1. Loads and aggregates ED arrivals into 15-minute intervals.
-#   2. Generates rolling-origin one-day-ahead point forecasts for:
-#        SNaive, ETS, ARIMA, Theta, Prophet, MLR, GAM, XGBoost, LightGBM.
-#   3. Adds optional external/precomputed forecasts:
-#        LSTM from 60rdsfiles/68lstmforecastingresults.rds
-#        TimeGPT from data/timegpt_pred_cv.rds
-#        Additional first-set file from 60rdsfiles/fistsetofmodel.rds
-#   4. Converts arrival forecasts into staffing requirements using StaffReq.
-#   5. Solves deterministic set-covering staffing optimisation.
-#   6. Computes forecast accuracy, operational summaries, correlations and plots.
-#
-# Important direction convention:
-#   ME  = forecast - actual
-#   DSI = forecast-based staffing - perfect-information staffing
-#   Positive ME  means over-forecasting.
-#   Positive DSI means over-staffing.
-#
-# Main outputs:
-#   data/point_forecast_results_all_models.rds
-#   data/point_forecast_results_all_models.csv
-#   data/pointforecast_staffdemand.rds        # compatibility alias: forecast-level table
-#   data/staff_demand_from_forecasts.rds      # StaffReq-converted table
-#   data/71daysummaryallimpact.rds
-#   data/overall_accuracy_summary.csv
-#   data/model_operational_summary.csv
-#   data/correlation_results.csv
-#   plot/*.png
-# ==============================================================================
 
 # -----------------------------
 # 0. User settings
