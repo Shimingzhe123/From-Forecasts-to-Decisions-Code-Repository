@@ -1,44 +1,6 @@
 # ============================================================================
 # Reproducible R workflow for the JOM manuscript
 # Title: From Forecast to Decision: The Value of Uncertainty in Healthcare Staffing Operations
-#
-# Purpose
-#   This single script consolidates the uploaded forecasting, optimization,
-#   sensitivity-analysis, and visualization scripts into one coherent workflow.
-#   It removes pilot/debug-only settings, keeps the manuscript-consistent logic,
-#   and writes output files with names that match the Overleaf manuscript.
-#
-# Expected input files
-#   01data/hospital2.csv
-#   01data/shiftschedule.xlsx
-#
-# Main output files
-#   01data/forecast_data.rds
-#   01data/optimization_results_main.csv
-#   outputs/diag_summary.csv
-#   outputs/model_summary.csv
-#   outputs_sens/MASTER_sensitivity_all.csv
-#   outputs_sens/Table_sensitivity_summary.csv
-#   plots_jom/Fig1_CRPS.pdf
-#   plots_jom/Fig2_Understaffing.pdf
-#   plots_jom/Fig3_ServiceLevel.pdf
-#   plots_jom/Fig4_TotalCost.pdf
-#   plots_jom/Fig5_VSS_vs_EVPI.pdf
-#   plots_jom/Fig6_Model_Landscape.pdf
-#
-# Notes on manuscript consistency
-#   1. Uses 15-minute slots, |T| = 96.
-#   2. Uses a 28-day rolling training window and a 365-day evaluation horizon.
-#   3. Generates 500 scenario paths for the main experiment.
-#   4. Uses W = 14 and rho = 0.25 in StaffReq mapping.
-#   5. Uses EV and RP as the two plotted staffing policies.
-#   6. Uses EEV, VSS, and EVPI as benchmarks; EEV is not plotted as a policy.
-#   7. Computes understaffing and service level after flexible-capacity recourse,
-#      not merely from the raw coverage gap.
-#   8. Uses baseline hourly cost parameters:
-#        regular = 1.0, overtime = 1.5, shortage = 40.0, overage = 0.2, ot_cap = 2.
-#      These are converted to per-slot costs internally.
-# ============================================================================
 
 # ============================================================================
 # 0. USER SETTINGS
