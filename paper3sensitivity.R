@@ -1,20 +1,3 @@
-# ============================================================
-# FULL RUNNABLE SCRIPT: Sensitivity analysis for (c_short, c_over, ot_cap)
-# Optimization model: 2-stage BALANCE EQUALITY (EQ) with shortage+overstaff+overtime
-#
-# Outputs per grid point:
-#   outputs_sens/<tag>/diag_summary.csv
-#   outputs_sens/<tag>/vss_3policy_by_day_model.csv
-#   outputs_sens/<tag>/plots/*.png
-#   outputs_sens/<tag>/plots_vss/*.png
-#
-# NOTE:
-# - This script assumes your data files exist:
-#     01data/hospital2.csv
-#     01data/shiftschedule.xlsx
-# - Runs may take time. Start with small horizon_days/models if needed.
-# ============================================================
-
 suppressPackageStartupMessages({
   library(dplyr)
   library(tidyr)
